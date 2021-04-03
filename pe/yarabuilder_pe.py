@@ -50,7 +50,7 @@ class YaraBuilderPE(yarabuilder.YaraBuilder):
             )
 
         # PDB path
-        if pe.DIRECTORY_ENTRY_DEBUG:
+        if hasattr(pe, "DIRECTORY_ENTRY_DEBUG"):
             if pe.DIRECTORY_ENTRY_DEBUG[0].entry:
                 if pe.DIRECTORY_ENTRY_DEBUG[0].entry.PdbFileName:
                     pdb_path = pe.DIRECTORY_ENTRY_DEBUG[0].entry.PdbFileName
