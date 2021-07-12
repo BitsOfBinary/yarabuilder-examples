@@ -12,3 +12,4 @@ pip install -r requirements.txt
 
 ## Other examples
 * [yaraparser](https://github.com/BitsOfBinary/yaraparser) (work in progress)
+* [yaramanager](https://github.com/3c7/yaramanager) (created by [Nils Kuhnert](https://github.com/3c7))
