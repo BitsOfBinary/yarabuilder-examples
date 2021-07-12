@@ -14,4 +14,16 @@ optional arguments:
 ```
 
 ## Example
-TODO
+Running this script on `calc.exe` will give the following result:
+```
+import "pe"
+import "hash"
+
+rule generated_pe_rule_1 {
+    strings:
+        $pdb_path = "calc.pdb"
+
+    condition:
+        uint16(0) == 0x5A4D and (pe.imphash() == "8eeaa9499666119d13b3f44ecd77a729" or hash.md5(pe.rich_signature.clear_data) == "3be62ba98028839e9311442fce41a41e" or any of them)
+}
+```
